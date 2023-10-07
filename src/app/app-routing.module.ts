@@ -7,19 +7,19 @@ import { AuthsComponent } from './layouts/auths/auths.component';
 const routes: Routes = [
   { path: '', redirectTo: 'users', pathMatch: 'full' },
   {
-    path: '',
+    path: 'admin',
     component: AdminsComponent,
     // canActivate: [AuthGuard],
     children: [{
-      path: '',
+      path: 'ad',
       loadChildren: () => import("./../app/layouts/admins/admins.module").then(e => e.AdminsModule)
     }]
   },
   {
-    path: '',
+    path: 'auth',
     component: AuthsComponent,
     children: [{
-      path: '',
+      path: 'au',
       loadChildren: () => import("./../app/layouts/auths/auths.module").then(e => e.AuthsModule)
     }]
   },
